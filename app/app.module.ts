@@ -1,13 +1,24 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent }  from './app.component';
-import { HomeComponent } from './home/home.component';
-import {ProfileComponent} from './profile/profile.component';
+
+import {InputTextModule} from 'primeng/primeng';
+import {CalendarModule} from 'primeng/primeng';
+
+
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 @NgModule({
-  imports:      [ BrowserModule ],
-  declarations: [ AppComponent, HomeComponent, ProfileComponent],
-  bootstrap:    [ AppComponent, HomeComponent, ProfileComponent]
+  imports:      [
+    BrowserModule,
+    InputTextModule,
+    FormsModule,
+    CalendarModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBWgqJLEjfdPGkUk9ynxbVc45I6QVgPN08'
+    })],
+  declarations: [ AppComponent ],
+  bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
