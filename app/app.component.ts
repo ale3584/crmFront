@@ -30,7 +30,13 @@ export class AppComponent {
     }];
 
   mapClicked($event: any) {
-    console.log("dfsd");
+    let newMarker = {
+      name: 'Untitlted',
+      lat: $event.coords.lat,
+      lng: $event.coords.lng,
+      draggable: false
+    };
+    this.markers.push(newMarker);
   }
 
   markerDragEnd(marker: Marker, $event: any) {
